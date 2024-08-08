@@ -17,7 +17,6 @@ public class IOMerge {
         List<Integer> list1 = new ArrayList<>();
         List<Integer> list2 = new ArrayList<>();
         List<Integer> mergedList = new ArrayList<>();
-        Set<Integer> commonSet = new HashSet<>();
 
         // Step 3: Read integers from input1.txt
         try (BufferedReader br = new BufferedReader(new FileReader("input1.txt"))) {
@@ -60,7 +59,7 @@ public class IOMerge {
         }
 
         // Step 7: Find common integers
-        commonSet.addAll(list1);  // Add all elements from list1 to commonSet
+        Set<Integer> commonSet = new HashSet<>(list1);  // Add all elements from list1 to commonSet
         commonSet.retainAll(list2);  // Retain only the elements that are also in list2
 
         // Step 8: Write common integers to common.txt
